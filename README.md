@@ -52,7 +52,9 @@ sudo bash setup.sh
 cd ../
 tar -xvzf lack_lib.tar.gz
 sudo cp -r lack_lib/* /usr/lib
-export PYTHONPATH=/usr/lib/python3.10/site-packages:$PYTHONPATH)
+cd ../xbutil_tool
+sudo cp xbutil2 /usr/bin/unwrapped/
+sudo sed -i -e '$aexport LD_LIBRARY_PATH=/usr/lib' /etc/profile.d/pynq_venv.sh
 ```
 
 Then go to your jupyter notebook home folder and fetch the notebooks:
